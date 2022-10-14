@@ -42,3 +42,9 @@ Cypress.Commands.add('Compararprecioypago',() => {
   })  
 })
 
+//[PERSONAL SPACE] Open the Navbar and go to Trips in Europe
+Cypress.Commands.add('Selectdestinationnavbar',() => {
+  cy.get('[data-test="menu-continent"] > svg').click()
+  cy.get('[data-test="menu-continent"] > :nth-child(7)').click()
+  cy.get('[data-test="country-element-menu"]>[title="Trips to Ireland"]').click()
+});
