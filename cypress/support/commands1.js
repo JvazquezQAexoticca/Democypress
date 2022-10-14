@@ -23,3 +23,22 @@ Cypress.Commands.add('Gohomeclickcards',{ scrollBehavior: 'center' },() => {
 
 });
 
+//Funcion de comparar total con precio a pagar
+Cypress.Commands.add('Compararprecioypago',() => {
+  var suma = 0
+  
+  cy.get(':nth-child(2) > .FlexColumn__StyledFlexColumn-sc-2z8aww-0 > .TripSummary__Total-sc-rznf51-7 > :nth-child(2)').each(($el) => {
+      const monto = $el.text()
+      var precio = monto.replace('€', '')
+      suma = Number(suma) + Number(precio)
+      cy.log("La suma es: " + suma)
+  })
+
+  cy.get('.TripSummary__PaymentLine-sc-rznf51-10 > :nth-child(2)').then(function ($el) {
+      const monto = $el.text()
+      var total = monto.replace('€', '')
+      expect(Number(total)).to.equal(Number(suma))
+      cy.log(total + " Precio total igual a precio a pagar: " + suma)
+  })  
+})
+
