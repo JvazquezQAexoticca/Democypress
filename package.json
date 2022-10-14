@@ -1,0 +1,19 @@
+{
+  "name": "automatizacion",
+  "version": "1.0.0",
+  "description": "Pruebasinicialesexoticca",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open",
+    "test": "opencypress",
+    "testChrome": "npm run test -- --browser chrome --headless",
+    "Testdashboard": "npm run test --record --key 2551b697-4dc7-45c8-b492-4a9e0d1f3a33 --browser chrome --headless"
+  },
+  "author": "Javier Vázquez",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.8.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-if": "^1.9.2"
+  }
+}
