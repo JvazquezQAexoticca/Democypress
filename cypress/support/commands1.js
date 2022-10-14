@@ -50,7 +50,7 @@ Cypress.Commands.add('Selectdestinationnavbar',() => {
 });
 
 
-// [PDP] Click see prices
+// [PDP] Click see again how to change coomand
 Cypress.Commands.add('Seeprices',() => {   
   cy.get('#sidebar').contains('See prices').click();   
 
