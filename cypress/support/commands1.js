@@ -48,3 +48,10 @@ Cypress.Commands.add('Selectdestinationnavbar',() => {
   cy.get('[data-test="menu-continent"] > :nth-child(7)').click()
   cy.get('[data-test="country-element-menu"]>[title="Trips to Ireland"]').click()
 });
+
+
+// [PDP] Click see prices
+Cypress.Commands.add('Seeprices',() => {   
+  cy.get('#sidebar').contains('See prices').click();   
+
+})
