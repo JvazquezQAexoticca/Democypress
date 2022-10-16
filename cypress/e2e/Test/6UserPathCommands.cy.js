@@ -16,7 +16,7 @@ describe('Journey of user', function () {
     })
  
     //Userpath with Commands
-    Cypress.config('defaultCommandTimeout',26000)
+    Cypress.config('defaultCommandTimeout',35000)
     it('Userpath', function () {
         //Step1.HOME Userpath login
         cy.log('Step2.3.PERSONAL> LANDING Userpath see Ireland trips')
@@ -30,7 +30,7 @@ describe('Journey of user', function () {
         cy.log('Step 8 [PDP] Click see pricese')
         cy.Seeprices()
         //Step9	Click see prices and select first rate available
-        cy.Selectbestprice()
+        cy.Selectfirstprice()
         //Step 10 I pick the CXL policy
         cy.Value2FlexpolicyPLusStep1()
         //Step 11 I search for help in the header dropdown

@@ -30,7 +30,7 @@ Cypress.Commands.add('Selectdestinationnavbar',() => {
 //[LANDINGPRODUCT] Change my mind, go back to Home Cick first card  of offers slider
 Cypress.Commands.add('Gohomeclickcards',{ scrollBehavior: 'center' },() => {
   cy.get('[data-test="logo-header"]').click()
-  cy.get('[class^="CardCampaign__CardLink"]').eq(3).click() 
+  cy.get('[class^="CardCampaign__CardLink"]').eq(1).click() 
 
 });
 
@@ -114,12 +114,16 @@ Cypress.Commands.add('HomeClickfirstcard',() => {
 
 // [PDP]Select first price
 Cypress.Commands.add('Selectfirstprice',() => {   
-      cy.get('#sidebar').contains('See prices').click();
       cy.get('[role="dialog"]').contains('Choose your departure date');
       cy.get('[role="dialog"]').contains('Next').click();
       cy.get('[role="dialog"]').contains('Next').click();
+      cy.intercept('POST', '**/getFlights*').as('SelectdateApi')
       cy.get('[class="Calendar__DayCell-sc-1fpdu-1 jSrscM withPrice"]').eq(2).click({force:true})
-    
+      cy.wait('@SelectdateApi').should(({ request, response }) => {
+        expect(request.body).to.include('flights')
+        expect(request.headers).to.have.property('content-length')
+        expect(response && response.body).to.have.property('flights')
+      })
     });
 
 // [PDP]Select best price or first price
