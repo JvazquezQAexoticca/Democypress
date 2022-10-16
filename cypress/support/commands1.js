@@ -16,8 +16,7 @@ Cypress.Commands.add('SelectbestpriceV2',{ scrollBehavior: 'center' },() => {
   cy.log('The BEST RATE has been selected')
 });
 
-<<<<<<< HEAD
-=======
+
 //[LANDINGPRODUCT] Change my mind, go back to Home Cick first card  of offers slider
 Cypress.Commands.add('Gohomeclickcards',{ scrollBehavior: 'center' },() => {
   cy.get('[data-test="logo-header"]').click()
@@ -56,5 +55,4 @@ Cypress.Commands.add('Selectdestinationnavbar',() => {
 Cypress.Commands.add('Seeprices',() => {   
   cy.get('#sidebar').contains('See prices').click();   
 
-})
->>>>>>> Prueba10
+});
