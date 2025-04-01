@@ -1,6 +1,5 @@
 
-class homelogin
-{
+export default homelogin;{
 
     currentMarket = 'us';
     formContainer = '#sidebar';
@@ -16,4 +15,3 @@ class homelogin
 
 
 }
-export default homelogin;

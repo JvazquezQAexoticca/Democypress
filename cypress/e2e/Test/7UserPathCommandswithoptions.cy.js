@@ -1,5 +1,5 @@
 /// <reference types="Cypress"/>    
-
+import { rellenarFormulario } from '../../support/commands/rellenarFormulario'
 //Import class
 import Step2 from '../../support/PagesObjects/Step2'
 
@@ -48,7 +48,7 @@ describe('Journey of user', function () {
         cy.Clicktostep2()
         //Step 16 Fill the form of paxes
         cy.PassangersFillLoginform()
-        cy.Rellenarformulariol()
+        rellenarFormulario()
         //Step 17 Continue to payment
         //Step 18 Go back to step 2
         cy.go('back')

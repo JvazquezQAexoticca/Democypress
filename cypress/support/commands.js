@@ -112,6 +112,7 @@ Cypress.Commands.add('HomeClickfirstcard',() => {
 });
 
 
+
 // [PDP]Select first price
 Cypress.Commands.add('Selectfirstprice',() => {   
       cy.get('[role="dialog"]').contains('Choose your departure date');
@@ -155,12 +156,13 @@ Cypress.Commands.add('Selectbestprice',() => {
   cy.get('[role="dialog"]').contains('Next').click();
   cy.get('[class="Calendar__BestPrice-sc-1fpdu-6 kYVqeq bestPrice"]').eq(2).click({force:true})
   cy.log('The BEST RATE has been selected')
-  //[role="dialog"]+div[data-visible="true"] table .withPrice > [class="Calendar__DayPrice-sc-1fpdu-4 faJduk"]
 
 });
 
 // [PDP] New calendar version V2
 Cypress.Commands.add('SelectbestpriceV2',{ scrollBehavior: 'center' },() => {  
+  const url = cy.url();
+  cy.visit(url+'?calendar=v2')
   cy.get('div[class^="NavArrow__StyledNavWrapper-sc-14vt347-0 jpszyW right"]').click(); 
   cy.get('div[class^="NavArrow__StyledNavWrapper-sc-14vt347-0 jpszyW right"]').click(); 
   cy.get('[class="CalendarDayPrices__StyledBestPriceBanner-sc-z9rk4x-5 gdsEKb"]').eq(1).click({force:true})
